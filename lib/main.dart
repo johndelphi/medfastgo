@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
               ),
               SizedBox(height: 20), // Optional: Add some spacing between the logo and text
               Text(
-                'MedRX',
+                'MedFast',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
             ],

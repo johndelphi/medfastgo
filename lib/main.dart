@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/splashScreen.dart';
+import 'package:medfastgo/pages/splash_screen.dart';
 //brian's comment
 void main() {
   runApp(MyApp());
@@ -8,9 +8,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splashScreen(),
+      home: SplashScreen(),
     );
   }
 }

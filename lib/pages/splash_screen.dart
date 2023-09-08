@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class splashScreen extends StatelessWidget {
-  const splashScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,8 @@ class splashScreen extends StatelessWidget {
               Image.asset(
                 '/Users/johnmichael/medfastgo/lib/assets/Medrxlogo.png', // Replace with your image file path
               ),
-              SizedBox(height: 20), // Optional: Add some spacing between the logo and text
-              Text(
+              const SizedBox(height: 20), // Optional: Add some spacing between the logo and text
+              const Text(
                 'MedFast',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),

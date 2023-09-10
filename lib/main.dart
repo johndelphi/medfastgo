@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:medfastgo/pages/Login_page.dart';
 import 'package:medfastgo/pages/splash_screen.dart';
-//brian's comment
-void main() {
-  runApp(MyApp());
-}
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      title: 'MedFast',
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => SplashScreen(),
+        '/login': (context) => LoginPage(),
+      },
     );
   }
 }

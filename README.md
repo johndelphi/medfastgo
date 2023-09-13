@@ -1,6 +1,7 @@
 # medfastgo
-
-A new Flutter project.
+Medfastgo a platform for pharmac and chemists to manage thier business 
+from point of sale to sale analytics 
+and drug procurement 
 
 ## Getting Started
 

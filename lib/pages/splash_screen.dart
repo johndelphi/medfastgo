@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              '/Users/johnmichael/medfastgo/lib/assets/Medrxlogo.png',
+              'lib/assets/Medrxlogo.png',
               // Replace with your image file path
             ),
             const SizedBox(height: 20), // Optional: Add some spacing between the logo and text

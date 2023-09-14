@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:medfastgo/pages/Home_Page.dart';
 import 'package:medfastgo/pages/Login_page.dart';
 import 'package:medfastgo/pages/brand_intro.dart';
 import 'package:medfastgo/pages/signUp.dart';
 import 'package:medfastgo/pages/splash_screen.dart';
-
-
 
 void main() => runApp(const MyApp());
 
@@ -18,11 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'MedFast',
       initialRoute: '/splash',
       routes: {
-        '/splash': (context) => const SplashScreen(),
-        '/brandIntro': (context) =>  BrandIntroPage(),
+        '/splash': (context) => SplashScreen(),
+        '/HomePage': (context) => HomePage(),
         '/login': (context) => LoginPage(),
-       '/signUp': (context) => signUpPage(),
- 
+        '/signUp': (context) => signUpPage(),
       },
     );
   }

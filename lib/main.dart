@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medfastgo/pages/Home_Page.dart';
 import 'package:medfastgo/pages/Login_page.dart';
 import 'package:medfastgo/pages/splash_screen.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => SplashScreen(),
+        '/HomePage': (context) => HomePage(),
         '/login': (context) => LoginPage(),
       },
     );

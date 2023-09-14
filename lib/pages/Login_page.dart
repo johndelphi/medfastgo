@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/components/my_button.dart';
 import 'package:medfastgo/pages/components/my_textfield.dart';
+
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            children:  [
+            children: [
               const SizedBox(height: 50),
               //logo
               const Icon(
@@ -27,15 +28,14 @@ class LoginPage extends StatelessWidget {
               ),
 
               const SizedBox(height: 50),
-              
-              
+
               //welcome back you've been missed
               Text(
                 'Welcome back to MedRx',
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 16,
-                  ),
+                ),
               ),
 
               const SizedBox(height: 25),
@@ -53,7 +53,6 @@ class LoginPage extends StatelessWidget {
                 hintText: 'Password',
                 obscureText: true,
               ),
-              
 
               const SizedBox(height: 10),
               // forgot password?
@@ -64,7 +63,8 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Text(
                       'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),),
+                      style: TextStyle(color: Colors.grey[600]),
+                    ),
                   ],
                 ),
               ),
@@ -75,13 +75,13 @@ class LoginPage extends StatelessWidget {
                 onTap: signUserIn,
                 buttonText: "Sign In",
               ),
-              
+
               const SizedBox(height: 50),
-              
+
               //or continue with
-              
+
               //google + apple sign in buttons
-              
+
               //not a member register now
             ],
           ),

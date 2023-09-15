@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:medfastgo/pages/home_page.dart';
-import 'package:medfastgo/pages/inventory_page.dart';
+import 'package:medfastgo/pages/Home_Page.dart';
+import 'package:medfastgo/pages/themes.dart';
 import 'package:medfastgo/pages/log_out.dart';
-import 'package:medfastgo/pages/my_orders.dart';
-import 'package:medfastgo/pages/notifications_page.dart';
-import 'package:medfastgo/pages/point_of_sale.dart';
+import 'package:medfastgo/pages/faq.dart';
+import 'package:medfastgo/pages/language.dart';
 import 'package:medfastgo/pages/profile_page.dart';
 import 'package:medfastgo/pages/settings_page.dart';
+import 'package:medfastgo/pages/support.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
-
-  const NavigationDrawerWidget({super.key});
   @override
   Widget buildHeader({
     required String urlImage,
@@ -53,16 +51,16 @@ class NavigationDrawerWidget extends StatelessWidget {
       );
 
   Widget buildSearchField() {
-    const color = Colors.white;
+    final color = Colors.white;
 
     return TextField(
-      style: const TextStyle(color: color),
+      style: TextStyle(color: color),
       decoration: InputDecoration(
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         hintText: 'Search',
-        hintStyle: const TextStyle(color: color),
-        prefixIcon: const Icon(Icons.search, color: color),
+        hintStyle: TextStyle(color: color),
+        prefixIcon: Icon(Icons.search, color: color),
         filled: true,
         fillColor: Colors.white12,
         enabledBorder: OutlineInputBorder(
@@ -82,22 +80,21 @@ class NavigationDrawerWidget extends StatelessWidget {
     required IconData icon,
     VoidCallback? onClicked,
   }) {
-    const color = Colors.white;
-    const hoverColor = Colors.white70;
+    final color = Colors.white;
+    final hoverColor = Colors.white70;
 
     return ListTile(
       leading: Icon(icon, color: color),
-      title: Text(text, style: const TextStyle(color: color)),
+      title: Text(text, style: TextStyle(color: color)),
       hoverColor: hoverColor,
       onTap: onClicked,
     );
   }
 
-  @override
   Widget build(BuildContext context) {
-    const name = 'Tala Chemist';
-    const email = 'talachemist@gmail.com';
-    const urlImage =
+    final name = 'Tala Chemist';
+    final email = 'talachemist@gmail.com';
+    final urlImage =
         'https://images.unsplash.com/photo-1603706580932-6befcf7d8521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80';
 
     return Drawer(
@@ -110,7 +107,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               name: name,
               email: email,
               onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const UserPage(
+                builder: (context) => UserPage(
                   name: 'Tala Chemist',
                   urlImage: urlImage,
                 ),
@@ -120,7 +117,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               padding: padding,
               child: Column(
                 children: [
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   buildSearchField(),
                   const SizedBox(height: 16),
                   buildMenuItem(
@@ -140,7 +137,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const UserPage(
+                        builder: (context) => UserPage(
                           name:
                               'Tala Chemist', // Provide the required name argument
                           urlImage:
@@ -149,57 +146,56 @@ class NavigationDrawerWidget extends StatelessWidget {
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'Notifications',
-                    icon: Icons.notifications,
+                    text: 'Themes',
+                    icon: Icons.color_lens_outlined,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            const NotificationsPage(), // Navigate to the HomePage
+                            Themes(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'Inventory',
-                    icon: Icons.inventory,
+                    text: 'Language',
+                    icon: Icons.language,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            const InventoryPage(), // Navigate to the HomePage
+                            Language(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'POS',
-                    icon: Icons.shop_2,
+                    text: 'Support',
+                    icon: Icons.support_agent_rounded,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            const PointOfSalePage(), // Navigate to the HomePage
+                            Support(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'My Orders',
-                    icon: Icons.shopping_bag,
+                    text: 'FAQ',
+                    icon: Icons.question_answer_outlined,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) =>
-                            const MyOrdersPage(), // Navigate to the HomePage
+                        builder: (context) => FAQ(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   const Divider(color: Colors.white70),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
                     text: 'Settings',
                     icon: Icons.settings,
@@ -207,11 +203,11 @@ class NavigationDrawerWidget extends StatelessWidget {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            const SettingsPage(), // Navigate to the HomePage
+                            SettingsPage(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
                     text: 'Log Out',
                     icon: Icons.logout,
@@ -219,7 +215,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            const LogOutPage(), // Navigate to the HomePage
+                            LogOutPage(), // Navigate to the HomePage
                       ));
                     },
                   ),

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:medfastgo/pages/home_page.dart';
+import 'package:medfastgo/pages/Home_Page.dart';
 
-class PointOfSalePage extends StatelessWidget {
-  const PointOfSalePage({super.key});
-
+class Reports extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Point Of Sale'),
+          title: const Text('Reports'),
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(58, 205, 50, 1),
           leading: GestureDetector(
@@ -18,6 +16,13 @@ class PointOfSalePage extends StatelessWidget {
             },
             child: const Icon(Icons.arrow_back), // Use the back arrow icon
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            // Add your action here when the button is clicked
+          },
+          backgroundColor: Color.fromRGBO(58, 205, 50, 1),
+          child: Icon(Icons.add),
         ),
       );
 }

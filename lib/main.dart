@@ -4,7 +4,6 @@ import 'package:medfastgo/pages/VerificationPage.dart';
 import 'package:medfastgo/pages/brand_intro.dart';
 import 'package:medfastgo/pages/home_page.dart';
 import 'package:medfastgo/pages/signUp.dart';
-import 'package:medfastgo/pages/inventory_page.dart';
 import 'package:medfastgo/pages/splash_screen.dart';
 import 'package:medfastgo/pages/forgotPassword.dart';
 import 'package:medfastgo/pages/successfulPassword.dart';
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/HomePage': (context) => HomePage(),
         '/login': (context) => LoginPage(),
         '/signUp': (context) => signUpPage(),
-        '/invent': (context) => InventoryPage(),
+        // '/invent': (context) => InventoryPage(),
         '/password':(context) => forgotPassword(),
         '/success':(context) => SuccessfulPassword(),
         '/verify':(context) => VerificationPage(),

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:medfastgo/pages/home_page.dart';
+import 'package:medfastgo/pages/Home_Page.dart';
 
-class InventoryPage extends StatelessWidget {
-  const InventoryPage({super.key});
-
+class SaleOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Inventory'),
+          title: const Text('Sale Order'),
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(58, 205, 50, 1),
           leading: GestureDetector(
@@ -18,6 +16,13 @@ class InventoryPage extends StatelessWidget {
             },
             child: const Icon(Icons.arrow_back), // Use the back arrow icon
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            // Add your action here when the button is clicked
+          },
+          backgroundColor: Color.fromRGBO(58, 205, 50, 1),
+          child: Icon(Icons.add),
         ),
       );
 }

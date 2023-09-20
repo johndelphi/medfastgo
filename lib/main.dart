@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/Home_Page.dart';
 import 'package:medfastgo/pages/Login_page.dart';
+import 'package:medfastgo/pages/auth_page.dart';
 import 'package:medfastgo/pages/signUp.dart';
 import 'package:medfastgo/pages/inventory_page.dart';
 import 'package:medfastgo/pages/splash_screen.dart';
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MedFast',
-      initialRoute: '/splash',
+      initialRoute: '/auth',
       routes: {
+        '/auth':(context) => AuthPage(),
         '/splash': (context) =>  SplashScreen(),
         '/HomePage': (context) => HomePage(),
         '/login': (context) => LoginPage(),

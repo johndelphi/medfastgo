@@ -66,6 +66,8 @@ flutter:
     #-lib/assets
   - lib/assets/Medrxlogo.png
   - lib/assets/medicine_time.png
+  - lib/assets/google.png
+  - lib/assets/apple.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

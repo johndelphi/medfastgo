@@ -3,6 +3,8 @@ import 'package:medfastgo/pages/notifications_page.dart';
 import 'package:medfastgo/pages/widgets/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -11,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Color _selectedItemColor = const Color.fromRGBO(58, 205, 50, 1);
-  Color _unselectedItemColor = Colors.black;
+  final Color _unselectedItemColor = Colors.black;
 
   @override
   void dispose() {
@@ -44,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => NotificationsPage(),
+                        builder: (context) => const NotificationsPage(),
                       ));
                     },
                     child: const Icon(
@@ -60,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => NavigationDrawerWidget(),
+                        builder: (context) => const NavigationDrawerWidget(),
                       ));
                     },
                     child: const Icon(

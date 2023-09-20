@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/Home_Page.dart';
 
 class MyOrdersPage extends StatelessWidget {
+  const MyOrdersPage({super.key});
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(

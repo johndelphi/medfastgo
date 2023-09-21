@@ -37,7 +37,7 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 5), (Timer t) {
+    timer = Timer.periodic(const Duration(seconds: 5), (Timer t) {
       if (currentIndex < slides.length - 1) {
         currentIndex++;
       } else {
@@ -46,7 +46,7 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
 
       pageController.animateToPage(
         currentIndex,
-        duration: Duration(milliseconds: 350),
+        duration: const Duration(milliseconds: 350),
         curve: Curves.easeIn,
       );
     });
@@ -71,7 +71,7 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('MedFastGo'),
+        title: const Text('MedFastGo'),
         backgroundColor: Colors.green,
       ),
       body: Column(
@@ -102,21 +102,21 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
                         fit: BoxFit.cover,
                         height: screenHeight * 0.38,
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Text(
                         slides[index]['title'],
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           color: Color.fromRGBO(44, 44, 44, 1),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         slides[index]['description'],
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Color.fromRGBO(44, 44, 44, 1),
                         ),
@@ -127,12 +127,12 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
               },
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(slides.length, (index) {
               return Container(
-                margin: EdgeInsets.all(4.0),
+                margin: const EdgeInsets.all(4.0),
                 width: currentIndex == index ? 12.0 : 8.0,
                 height: currentIndex == index ? 12.0 : 8.0,
                 decoration: BoxDecoration(
@@ -142,22 +142,22 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
               );
             }),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/signUp');
             },
-            child: Text('Sign Up'),
+            child: const Text('Sign Up'),
             style: ElevatedButton.styleFrom(
               primary: Colors.green,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/login');
             },
-            child: Text('Already Have an Account'),
+            child: const Text('Already Have an Account'),
             style: ElevatedButton.styleFrom(
               primary: Colors.green,
             ),

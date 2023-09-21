@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/Home_Page.dart';
-import 'package:medfastgo/pages/inventory_page.dart';
+import 'package:medfastgo/pages/themes.dart';
 import 'package:medfastgo/pages/log_out.dart';
-import 'package:medfastgo/pages/my_orders.dart';
-import 'package:medfastgo/pages/notifications_page.dart';
-import 'package:medfastgo/pages/point_of_sale.dart';
+import 'package:medfastgo/pages/faq.dart';
+import 'package:medfastgo/pages/language.dart';
+import 'package:medfastgo/pages/support.dart';
 import 'package:medfastgo/pages/profile_page.dart';
 import 'package:medfastgo/pages/settings_page.dart';
 
@@ -117,7 +117,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               padding: padding,
               child: Column(
                 children: [
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   buildSearchField(),
                   const SizedBox(height: 16),
                   buildMenuItem(
@@ -146,57 +146,56 @@ class NavigationDrawerWidget extends StatelessWidget {
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'Notifications',
-                    icon: Icons.notifications,
+                    text: 'Themes',
+                    icon: Icons.color_lens_outlined,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            NotificationsPage(), // Navigate to the HomePage
+                            Themes(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'Inventory',
-                    icon: Icons.inventory,
+                    text: 'Language',
+                    icon: Icons.language,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            InventoryPage(), // Navigate to the HomePage
+                            Language(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'POS',
-                    icon: Icons.shop_2,
+                    text: 'Support',
+                    icon: Icons.support_agent_rounded,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) =>
-                            PointOfSalePage(), // Navigate to the HomePage
+                            Support(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
-                    text: 'My Orders',
-                    icon: Icons.shopping_bag,
+                    text: 'FAQ',
+                    icon: Icons.question_answer_outlined,
                     onClicked: () {
                       Navigator.of(context).pop(); // Close the drawer
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) =>
-                            MyOrdersPage(), // Navigate to the HomePage
+                        builder: (context) => FAQ(), // Navigate to the HomePage
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   const Divider(color: Colors.white70),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
                     text: 'Settings',
                     icon: Icons.settings,
@@ -208,7 +207,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                       ));
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   buildMenuItem(
                     text: 'Log Out',
                     icon: Icons.logout,

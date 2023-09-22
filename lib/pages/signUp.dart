@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/components/my_button.dart';
 import 'package:medfastgo/pages/components/my_textfield.dart';
-
+import 'package:medfastgo/pages/components/normalTF.dart';
 
 
 class signUpPage extends StatelessWidget {
@@ -49,18 +49,18 @@ class signUpPage extends StatelessWidget {
                 const SizedBox(height: 25),
           
                 //username textfield
-                MyTextField(
+                normalTF(
                   controller: usernameController, 
                   hintText: 'Username', 
-                  
-                ),
+                  obscureText: false
+                  ),
                 const SizedBox(height: 10),
           
                 //email textfield
-                MyTextField(
-                  controller: emailController, 
-                  hintText: 'Email', 
-                  
+                normalTF(
+                  controller: emailController,
+                  hintText: 'Email',
+                  obscureText: false,
                 ),
                 const SizedBox(height: 10),
           
@@ -78,12 +78,12 @@ class signUpPage extends StatelessWidget {
                   hintText: 'Confirm Password', 
                   
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
           
                 //register button
                 MyButton(
                   onTap: SignUserUp,
-                  buttonText: "Sign Up",
+                  buttonText: "Agree and Register",
                 ),
           
               ],

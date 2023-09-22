@@ -6,7 +6,7 @@ import 'package:medfastgo/pages/inventory_page.dart';
 import 'package:medfastgo/pages/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
+import 'package:medfastgo/pages/brand_intro.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) =>  SplashScreen(),
+        '/brand':(context) => BrandIntroPage(),
         '/HomePage': (context) => HomePage(),
         '/login': (context) => LoginPage(),
         '/signUp': (context) => signUpPage(),

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/components/my_button.dart';
 import 'package:medfastgo/pages/components/my_textfield.dart';
 import 'package:medfastgo/pages/components/square_tile.dart';
+import 'package:medfastgo/pages/components/normalTF.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   // text editing controllers
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   //sign user in method
@@ -42,9 +43,9 @@ class LoginPage extends StatelessWidget {
           
                 const SizedBox(height: 25),
                 //username textfield
-                MyTextField(
-                  controller: usernameController,
-                  hintText: 'Username',
+                normalTF(
+                  controller: emailController,
+                  hintText: 'Enter your email',
                   obscureText: false,
                 ),
           
@@ -52,8 +53,8 @@ class LoginPage extends StatelessWidget {
                 //password textfield
                 MyTextField(
                   controller: passwordController,
-                  hintText: 'Password',
-                  obscureText: true,
+                  hintText: 'Enter your password',
+                 
                 ),
           
                 const SizedBox(height: 10),
@@ -75,13 +76,13 @@ class LoginPage extends StatelessWidget {
                 //sign in button
                 MyButton(
                   onTap: signUserIn,
-                  buttonText: "Sign In",
+                  buttonText: "Login",
                 ),
           
                 const SizedBox(height: 50),
           
                 //or continue with
-                Padding(
+                /*Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Row(
                     children: [
@@ -106,12 +107,12 @@ class LoginPage extends StatelessWidget {
                         ),
                     ],
                   ),
-                ),
+                ),*/
 
                 const SizedBox(height: 50),
           
                 //google + apple sign in buttons
-                Row(
+                /*Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     //google button
@@ -122,14 +123,14 @@ class LoginPage extends StatelessWidget {
                     //apple button
                     SquareTile(imagePath: 'lib/assets/apple.png'),
                   ],
-                ),
+                ),*/
           
                 //not a member register now
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Not a member?',
+                      'Don\'t have an account?',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),

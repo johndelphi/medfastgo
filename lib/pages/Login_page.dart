@@ -23,11 +23,19 @@ class LoginPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 50),
-                //logo
-                const Icon(
-                  Icons.lock,
-                  size: 100,
+                //back button
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back_ios_new_rounded),
+                      onPressed: () {
+                        //Navigate back to the previous screen
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
                 ),
           
                 const SizedBox(height: 50),
@@ -37,7 +45,7 @@ class LoginPage extends StatelessWidget {
                   'Welcome back to MedRx',
                   style: TextStyle(
                     color: Colors.grey[700],
-                    fontSize: 16,
+                    fontSize: 20,
                   ),
                 ),
           

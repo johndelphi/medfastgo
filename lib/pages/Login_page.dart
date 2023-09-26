@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  //sign user in method
+  // sign user in method
   void signUserIn() {}
 
   @override
@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                //back button
+                // back button
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Align(
@@ -31,16 +31,16 @@ class LoginPage extends StatelessWidget {
                     child: IconButton(
                       icon: Icon(Icons.arrow_back_ios_new_rounded),
                       onPressed: () {
-                        //Navigate back to the previous screen
+                        // Navigate back to the previous screen
                         Navigator.of(context).pop();
                       },
                     ),
                   ),
                 ),
-          
+
                 const SizedBox(height: 50),
-          
-                //welcome back you've been missed
+
+                // welcome back you've been missed
                 Text(
                   'Welcome back to MedRx',
                   style: TextStyle(
@@ -48,92 +48,62 @@ class LoginPage extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-          
+
                 const SizedBox(height: 25),
-                //username textfield
+
+                // username textfield
                 normalTF(
                   controller: emailController,
                   hintText: 'Enter your email',
                   obscureText: false,
                 ),
-          
+
                 const SizedBox(height: 10),
-                //password textfield
+
+                // password textfield
                 MyTextField(
                   controller: passwordController,
                   hintText: 'Enter your password',
-                 
                 ),
-          
+
                 const SizedBox(height: 10),
+
                 // forgot password?
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
+                GestureDetector(
+                  onTap: () {
+                    // Navigate to the Forgot Password page
+                    Navigator.of(context).pushNamed('/password');
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            decoration: TextDecoration.underline, // Add underline to make it look like a link
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-          
+
                 const SizedBox(height: 25),
-                //sign in button
+
+                // sign in button
                 MyButton(
                   onTap: signUserIn,
                   buttonText: "Login",
                 ),
-          
-                const SizedBox(height: 50),
-          
-                //or continue with
-                /*Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.grey[400],
-                        ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
-                            'Or continue with',
-                            style: TextStyle(color: Colors.grey[700]),
-                          ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
-                          ),
-                        ),
-                    ],
-                  ),
-                ),*/
 
                 const SizedBox(height: 50),
-          
-                //google + apple sign in buttons
-                /*Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    //google button
-                    SquareTile(imagePath: 'lib/assets/google.png'),
 
-                    SizedBox(width: 25),
+                // google + apple sign in buttons
 
-                    //apple button
-                    SquareTile(imagePath: 'lib/assets/apple.png'),
-                  ],
-                ),*/
-          
-                //not a member register now
+                // not a member register now
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -142,11 +112,17 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
-                    const Text(
-                      'Register now',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+                    TextButton(
+                      onPressed: () {
+                        // Navigate to the Register page
+                        Navigator.of(context).pushNamed('/register');
+                      },
+                      child: Text(
+                        'Register now',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],

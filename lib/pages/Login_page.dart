@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/components/my_button.dart';
 import 'package:medfastgo/pages/components/my_textfield.dart';
+import 'package:medfastgo/pages/components/square_tile.dart';
+import 'package:medfastgo/pages/components/normalTF.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   // text editing controllers
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  //sign user in method
+  // sign user in method
   void signUserIn() {}
 
   @override
@@ -18,72 +20,115 @@ class LoginPage extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Center(
-          child: Column(
-            children: [
-              const SizedBox(height: 50),
-              //logo
-              const Icon(
-                Icons.lock,
-                size: 100,
-              ),
-
-              const SizedBox(height: 50),
-
-              //welcome back you've been missed
-              Text(
-                'Welcome back to MedRx',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 16,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // back button
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back_ios_new_rounded),
+                      onPressed: () {
+                        // Navigate back to the previous screen
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 25),
-              //username textfield
-              MyTextField(
-                controller: usernameController,
-                hintText: 'Username',
-                obscureText: false,
-              ),
+                const SizedBox(height: 50),
 
-              const SizedBox(height: 10),
-              //password textfield
-              MyTextField(
-                controller: passwordController,
-                hintText: 'Password',
-                obscureText: true,
-              ),
+                // welcome back you've been missed
+                Text(
+                  'Welcome back to MedRx',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 20,
+                  ),
+                ),
 
-              const SizedBox(height: 10),
-              // forgot password?
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                const SizedBox(height: 25),
+
+                // username textfield
+                normalTF(
+                  controller: emailController,
+                  hintText: 'Enter your email',
+                  obscureText: false,
+                ),
+
+                const SizedBox(height: 10),
+
+                // password textfield
+                MyTextField(
+                  controller: passwordController,
+                  hintText: 'Enter your password',
+                ),
+
+                const SizedBox(height: 10),
+
+                // forgot password?
+                GestureDetector(
+                  onTap: () {
+                    // Navigate to the Forgot Password page
+                    Navigator.of(context).pushNamed('/password');
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            decoration: TextDecoration.underline, // Add underline to make it look like a link
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 25),
+
+                // sign in button
+                MyButton(
+                  onTap: signUserIn,
+                  buttonText: "Login",
+                ),
+
+                const SizedBox(height: 50),
+
+                // google + apple sign in buttons
+
+                // not a member register now
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),
+                      'Don\'t have an account?',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                    const SizedBox(width: 4),
+                    TextButton(
+                      onPressed: () {
+                        // Navigate to the Register page
+                        Navigator.of(context).pushNamed('/register');
+                      },
+                      child: Text(
+                        'Register now',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ],
-                ),
-              ),
-
-              const SizedBox(height: 25),
-              //sign in button
-              MyButton(
-                onTap: signUserIn,
-                buttonText: "Sign In",
-              ),
-
-              const SizedBox(height: 50),
-
-              //or continue with
-
-              //google + apple sign in buttons
-
-              //not a member register now
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

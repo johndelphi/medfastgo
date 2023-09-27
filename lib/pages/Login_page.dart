@@ -12,7 +12,22 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {}
+  void signUserIn(BuildContext context) {
+    //Get the entered email and password
+    final enteredEmail = emailController.text;
+    final enteredPassword = passwordController.text;
+
+    if (enteredEmail == 'test@gmail.com' && enteredPassword == 'test123') {
+      Navigator.of(context).pushReplacementNamed('/HomePage');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Invalid email or password'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +110,9 @@ class LoginPage extends StatelessWidget {
 
                 // sign in button
                 MyButton(
-                  onTap: signUserIn,
+                  onTap: () {
+                    signUserIn(context);
+                  },
                   buttonText: "Login",
                 ),
 

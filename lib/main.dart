@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medfastgo/pages/Home_Page.dart';
 import 'package:medfastgo/pages/Login_page.dart';
+import 'package:medfastgo/pages/VerificationPage.dart';
 import 'package:medfastgo/pages/change_password.dart';
 import 'package:medfastgo/pages/signUp.dart';
 import 'package:medfastgo/pages/inventory_page.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/password':(context) => forgotPassword(),
         '/change':(context) => ChangePassword(),
         '/success':(context) => SuccessfulPassword(),
+        '/verify':(context) => VerificationPage(),
       },
     );
   }

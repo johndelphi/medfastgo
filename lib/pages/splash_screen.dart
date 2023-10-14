@@ -6,7 +6,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/brandIntro');
+      Navigator.pushReplacementNamed(context, '/brandintro');
     });
 
     return Scaffold(
@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             Image.asset(
               'lib/assets/Medrxlogo.png',
-              // Replace with your image file path
+             
             ),
             const SizedBox(height: 20), // Optional: Add some spacing between the logo and text
             const Text(

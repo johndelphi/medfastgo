@@ -14,17 +14,17 @@ class _BrandIntroPageState extends State<BrandIntroPage> {
     {
       'title': 'Solutions for your pharmacy',
       'description': 'Run and manage your pharmacy from your phone',
-      'image': 'lib/assets/medicine_time.png',
+      'image': 'lib/assets/medicine.png',
     },
     {
       'title': 'Fast Delivery',
       'description': 'Get your medicines right at your doorstep',
-      'image': 'lib/assets/medicine_time.png',
+      'image': 'lib/assets/medicine.png',
     },
     {
       'title': 'Wide Range',
       'description': 'Choose from a variety of medical products',
-      'image': 'lib/assets/medicine_time.png',
+      'image': 'lib/assets/medicine.png',
     },
   ];
 
